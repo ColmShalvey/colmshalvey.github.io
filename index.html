@@ -1,199 +1,113 @@
-"<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Wonder Wise Travel</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Colm Shalvey</title>
   <style>
+    /* Reset & base */
     * {
       box-sizing: border-box;
     }
-
     body {
-      font-family: 'Raleway', sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      padding: 0;
-      background: #f0f8ff;
-      color: #333;
       line-height: 1.6;
+      background: #f9f9f9;
+      color: #222;
+    }
+    a {
+      color: #0077cc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
     }
 
     header {
-      background: linear-gradient(to right, #4caf50, #66bb6a);
+      background: #004080;
       color: white;
-      padding: 1.5rem;
+      padding: 2rem 1rem;
       text-align: center;
     }
-
     header h1 {
       margin: 0;
       font-size: 2.5rem;
     }
-
     header p {
-      font-size: 1.1rem;
-      margin-top: 0.5rem;
+      font-size: 1.2rem;
+      margin-top: 0.3rem;
+    }
+    nav {
+      margin-top: 1rem;
+    }
+    nav a {
+      margin: 0 1rem;
+      font-weight: bold;
     }
 
     main {
-      padding: 2rem 1rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    h2 {
-      text-align: center;
-      margin-top: 2rem;
-    }
-
-    .filters {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    .filters button {
-      margin: 0.5rem;
-      padding: 0.6rem 1.2rem;
-      border: none;
-      background: #4caf50;
-      color: white;
-      border-radius: 25px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-
-    .filters button:hover {
-      background: #388e3c;
-    }
-
-    #destinations {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.5rem;
-    }
-
-    .destination-card {
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      width: 300px;
-      overflow: hidden;
-      transition: transform 0.3s;
-    }
-
-    .destination-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .destination-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .destination-card h3 {
-  margin: 0.5rem 0;
-  text-align: center;
-}
-
-
-    .destination-card p {
+      max-width: 900px;
+      margin: 2rem auto;
       padding: 0 1rem;
-    }
-
-    .destination-card a {
-      display: inline-block;
-      margin: 1rem;
-      text-decoration: none;
-      color: white;
-      background: #4caf50;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      transition: background 0.3s;
-    }
-
-    .destination-card a:hover {
-      background: #2e7d32;
-    }
-
-    .tips, .signup {
       background: white;
-      padding: 1.5rem;
-      border-radius: 15px;
-      margin: 2rem auto;
-      max-width: 700px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 6px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
     }
 
-    .signup input {
-      padding: 0.5rem;
-      width: 70%;
-      margin-top: 0.5rem;
-      border-radius: 5px;
-      border: 1px solid #ccc;
+    section {
+      margin-bottom: 3rem;
+    }
+    section h2 {
+      border-bottom: 2px solid #004080;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
     }
 
-    .signup button {
-      padding: 0.5rem 1rem;
-      margin-top: 1rem;
-      border: none;
-      background: #4caf50;
+    /* About */
+    #about p {
+      max-width: 600px;
+    }
+
+    /* Projects list */
+    .project {
+      margin-bottom: 1.5rem;
+    }
+    .project h3 {
+      margin: 0;
+      color: #004080;
+    }
+    .project p {
+      margin: 0.3rem 0;
+    }
+    .project a {
+      font-size: 0.9rem;
+    }
+
+    /* Resume link */
+    #resume a {
+      display: inline-block;
+      background: #004080;
       color: white;
-      border-radius: 5px;
-      cursor: pointer;
+      padding: 0.6rem 1.2rem;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+    #resume a:hover {
+      background: #0066cc;
     }
 
-    .signup button:hover {
-      background: #388e3c;
+    /* Contact */
+    #contact a {
+      color: #004080;
+      font-weight: bold;
     }
 
-    iframe {
-      display: block;
-      margin: 2rem auto;
-      border: none;
-      border-radius: 15px;
-      width: 100%;
-      max-width: 1000px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #4caf50;
-      color: white;
-      margin-top: 2rem;
-    }
-
-    .view-button {
-      text-align: center;
-      margin: 2rem 0;
-    }
-
-    .view-button a button {
-      padding: 0.6rem 1.4rem;
-      background: #4caf50;
-      color: white;
-      font-size: 1rem;
-      border: none;
-      border-radius: 25px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .view-button a button:hover {
-      background: #2e7d32;
-    }
-
-    @media (max-width: 768px) {
-      .destination-card {
-        width: 90%;
-      }
-
-      .signup input {
-        width: 100%;
+    /* Responsive */
+    @media (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 0.5rem 0;
       }
     }
   </style>
@@ -201,125 +115,61 @@
 <body>
 
 <header>
-  <h1>🌍 Wonder Wise Travel</h1>
-  <p>Your next adventure awaits</p>
+  <h1>Colm Shalvey</h1>
+  <p>Graduate in Cybercrime & Homeland Security | Aspiring Cyber Law Professional</p>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#resume">Resume</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
 <main>
 
-  <h2>Top Destinations</h2>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I’m Colm Shalvey, a recent graduate with a degree in Cybercrime and Homeland Security, passionate about cybersecurity, digital forensics, and the intersection of law and technology.
+      I’m currently exploring career opportunities in cyber law and digital investigations. Outside of work, I’m an avid Formula 1 fan and enjoy staying active with regular workouts.
+    </p>
+  </section>
 
-  <div class="filters">
-    <button onclick="filterDestinations('beach')">Beaches</button>
-    <button onclick="filterDestinations('adventure')">Adventure</button>
-    <button onclick="filterDestinations('culture')">Culture</button>
-    <button onclick="filterDestinations('all')">Show All</button>
-  </div>
+  <section id="projects">
+    <h2>Projects</h2>
 
-  <div id="destinations">
-    <div class="destination-card beach">
-      <img src="https://media.digitalnomads.world/wp-content/uploads/2021/01/20120709/bali-for-digital-nomads.jpg" alt="Bali">
-      <h3>Bali</h3>
-      <p>Relax on stunning beaches and explore lush landscapes.</p>
-      <a href="https://bali.com" target="_blank">Learn More</a>
+    <div class="project">
+      <h3>Personal Finance Tracker</h3>
+      <p>A web app that helps users track income, expenses, and savings goals, built with HTML, CSS, JavaScript, and SQLite.</p>
+      <a href="https://github.com/YOUR_USERNAME/finance-tracker" target="_blank" rel="noopener noreferrer">View on GitHub</a>
     </div>
 
-    <div class="destination-card beach">
-      <img src="https://ik.imagekit.io/virtualresults/wp-sites/tr:di-noimage.png,f-auto,pr-true,fo-auto/app%2Fuploads%2Fsites%2Flei%2F2023%2F04%2Fm1.jpg" alt="Mykonos">
-      <h3>Mykonos</h3>
-      <p>Experience iconic windmills, vibrant nightlife, and crystal‑clear waters.</p>
-      <a href="https://www.visitgreece.gr/islands/cyclades/mykonos/" target="_blank">Learn More</a>
+    <div class="project">
+      <h3>Phishing Attack Simulation</h3>
+      <p>Simulated a phishing attack on Twitter as part of a Kali Linux cyber intelligence lab.</p>
+      <a href="#" target="_blank" rel="noopener noreferrer">Details coming soon</a>
     </div>
 
-    <div class="destination-card culture">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Trevi_Fountain%2C_Rome%2C_Italy_2_-_May_2007.jpg/330px-Trevi_Fountain%2C_Rome%2C_Italy_2_-_May_2007.jpg" alt="Rome">
-      <h3>Rome</h3>
-      <p>Step back in time with rich history and architecture.</p>
-      <a href="https://www.rome.net/" target="_blank">Learn More</a>
+    <div class="project">
+      <h3>SQL Injection Demo</h3>
+      <p>Created a presentation and lab to demonstrate SQL injection vulnerabilities using sqlmap.</p>
+      <a href="#" target="_blank" rel="noopener noreferrer">Details coming soon</a>
     </div>
 
-    <div class="destination-card culture">
-      <img src="https://res.cloudinary.com/aenetworks/image/upload/c_fill,ar_2,w_3840,h_1920,g_auto/dpr_auto/f_auto/q_auto:eco/v1/gettyimages-1390815938?_a=BAVAZGDX0" alt="Tokyo">
-      <h3>Tokyo</h3>
-      <p>A high-tech city full of culture, food, and adventure.</p>
-      <a href="https://www.gotokyo.org/en/" target="_blank">Learn More</a>
-    </div>
-    <!-- Barcelona -->
-    <div class="destination-card culture">
-        <img src="https://d2rdhxfof4qmbb.cloudfront.net/wp-content/uploads/2023/07/wallpaperaccess.com_-2048x1280.jpg">
-        <h3>Barcelona</h3>
-        <p>Gaze at Gaudí’s architecture and immerse yourself in Catalonian culture.</p>
-        <a href="https://www.barcelonaturisme.com/" target="_blank">Learn More</a>
-      </div>
-  
-      <!-- Rio de Janeiro -->
-      <div class="destination-card beach">
-        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/8c/62/4d/caption.jpg?w=800&h=800&s=1">
-        <h3>Rio de Janeiro</h3>
-        <p>Soak up the sun on Copacabana and feel the rhythm of Carnival.</p>
-        <a href="https://www.visitbrasil.com/destinations/rio-de-janeiro/" target="_blank">Learn More</a>
-      </div>
-  </div>
+  </section>
 
-  <div class="tips">
-    <h2>✈️ Travel Tips</h2>
-    <ul>
-      <li>Carry both digital and printed copies of important documents (passport, visa, etc.).</li>
-      <li>Use a local SIM card or portable Wi-Fi for easy access to maps and communication.</li>
-      <li>Pack a power bank to keep your devices charged during long days of sightseeing.</li>
-      <li>Learn a few basic local phrases (like "hello" and "thank you") to connect with locals.</li>
-      <li>Always check the weather forecast and pack accordingly to avoid any surprises.</li>
-    </ul>
-  </div>
-  
+  <section id="resume">
+    <h2>Resume</h2>
+    <p>You can <a href="/resume.pdf" download>download my resume here</a>.</p>
+  </section>
 
-  <div class="signup">
-    <h2>📧 Get Destination Ideas</h2>
-    <form onsubmit="showThanks(event)">
-      <label for="email">Enter your email:</label><br>
-      <input type="email" id="email" required><br>
-      <button type="submit">Subscribe</button>
-    </form>
-    <p id="thanksMessage" style="color: green;"></p>
-  </div>
-
-  <h2>🌐 Explore the World</h2>
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31505389.01003437!2d-20.026219607204723!3d20.22193350022281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjDCsDEyJzAwLjAiTiAxMcKwMDAnMDAuMCJF!5e0!3m2!1sen!2sus!4v1621193862123!5m2!1sen!2sus"
-    height="480"
-    allowfullscreen=""
-    loading="lazy">
-  </iframe>
-
-  <div class="view-button">
-    <a href="destinations.html">
-      <button>View All Destinations</button>
-    </a>
-  </div>
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email me at <a href="mailto:colm.shalvey@example.com">colm.shalvey@example.com</a></p>
+    <p>Find me on <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noopener noreferrer">LinkedIn</a> and <a href="https://github.com/YOUR_USERNAME" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
+  </section>
 
 </main>
-
-<footer>
-  &copy; 2025 Wonder Wise Travel. All rights reserved.
-</footer>
-
-<script>
-  function filterDestinations(category) {
-    const cards = document.querySelectorAll('.destination-card');
-    cards.forEach(card => {
-      if (category === 'all' || card.classList.contains(category)) {
-        card.style.display = 'inline-block';
-      } else {
-        card.style.display = 'none';
-      }
-    });
-  }
-
-  function showThanks(event) {
-    event.preventDefault();
-    document.getElementById('thanksMessage').textContent = "Thanks for subscribing! We'll send you amazing destinations.";
-  }
-</script>
 
 </body>
 </html>
